@@ -1,0 +1,297 @@
+{
+  "personal_information": {
+    "full_name": "Vinay Dhorajiya",
+    "date_of_birth": "2002-06-09",
+    "place_of_birth": "Surat, India",
+    "nationality": "Indian",
+    "gender": "Male",
+    "current_location": {
+      "address": "Zöllnerplatz 24, 09111 Chemnitz",
+      "city": "Chemnitz",
+      "country": "Germany"
+    },
+    "work_authorization": "Eligible to work in Germany as a student",
+    "contact": {
+      "phone": "+49 17666932719",
+      "whatsapp": "+49 17666932719",
+      "email": "vinay.dhorajiya19@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/vinay-dhorajiya-2652501b5",
+      "github": "https://github.com/vinaydhorajiya01",
+      "portfolio": "https://vinaydhorajiya.netlify.app/"
+    }
+  },
+
+  "professional_profile": {
+    "headline": "AI & Software Engineer | Computer Vision, NLP, LLMs, Generative AI",
+    "summary": "Master’s student in Automotive Software Engineering at TU Chemnitz with strong expertise in Computer Vision, NLP, Generative AI, and Machine Learning. Hands-on experience across internships, hackathons, and research-driven projects, building real-world AI systems using Python, PyTorch, HuggingFace, LangChain, and MLOps tools. Actively seeking master thesis, internship, working student, or full-time opportunities in Germany or the EU."
+  },
+
+  "availability_and_preferences": {
+    "current_status": "Master’s student",
+    "roles_of_interest": [
+      "Master Thesis",
+      "Full-time roles",
+      "Working student positions",
+      "Internships"
+    ],
+    "work_mode": [
+      "On-site",
+      "Remote",
+      "Hybrid"
+    ],
+    "start_date": "Immediately or within 2 weeks",
+    "relocation": "Open to relocation within Germany and EU",
+    "salary_expectations": "Flexible and market-aligned"
+  },
+
+  "education": [
+    {
+      "degree": "Master of Science",
+      "field_of_study": "Automotive Software Engineering",
+      "institution": "Technische Universität Chemnitz",
+      "city": "Chemnitz",
+      "country": "Germany",
+      "start_date": "2023-10",
+      "end_date": "Present",
+      "eqf_level": "EQF Level 7",
+      "coursework": [
+        "Image Understanding (Computer Vision)",
+        "Advanced Platforms for Automotive Systems",
+        "Software Service Engineering",
+        "Software Engineering and Java Programming",
+        "Hardware / Software Co-design",
+        "Machine Learning",
+        "Distributed and Embedded Systems"
+      ]
+    },
+    {
+      "degree": "Bachelor of Engineering",
+      "field_of_study": "Computer Engineering",
+      "institution": "Gujarat Technological University",
+      "city": "Ahmedabad",
+      "country": "India",
+      "start_date": "2019-06",
+      "end_date": "2023-06",
+      "eqf_level": "EQF Level 6",
+      "gpa": "1.5 (Top 5% of batch)",
+      "coursework": [
+        "Machine Learning",
+        "Artificial Intelligence",
+        "Natural Language Processing",
+        "Advanced Java",
+        "Python for Data Science",
+        "Database Management (MySQL)",
+        "Embedded Systems",
+        "Web Development",
+        "Data Structures and Algorithms"
+      ]
+    }
+  ],
+
+  "work_experience": [
+  {
+    "company": "Casablanca.AI GmbH",
+    "location": "Pforzheim, Germany",
+    "role": "Software Development Intern – Computer Vision",
+    "employment_type": "Internship (Onsite)",
+    "start_date": "2025-02",
+    "end_date": "2025-04",
+    "end_year_month": 202504,
+    "is_current": false,
+    "is_most_recent": true,
+    "responsibilities": [
+      "Developed real-time gaze correction using Python, OpenCV, and ONNX Runtime",
+      "Designed PyQt5 dashboards tracking 10+ KPIs for system performance and user behavior",
+      "Implemented secure password autofill and adaptive UI themes for Windows and macOS",
+      "Worked in agile sprints using Git, GitHub, and Jira",
+      "Contributed to user-centered design and performance optimization"
+    ]
+    },
+    {
+        "company": "Buissmaster OMS",
+        "location": "Surat, India",
+        "role": "Machine Learning Engineer / Intern",
+        "employment_type": "Internship / Full-time project",
+        "start_date": "2023-08",
+        "end_date": "2023-09",
+        "end_year_month": 202309,
+        "is_current": false,
+        "is_most_recent": false,
+        "responsibilities": [
+        "Trained object detection models using YOLOv8 and Yolo-NAS on 5K+ images",
+        "Improved model accuracy by approximately 12%",
+        "Preprocessed and cleaned 10K+ data records using NumPy, Pandas, and Scikit-learn",
+        "Annotated 1,000+ images using CVAT",
+        "Generated synthetic data and fine-tuned models for better performance"
+        ]
+    },
+    {
+        "company": "Secure Infotech",
+        "location": "Surat, India",
+        "role": "Python Development Intern",
+        "employment_type": "Internship",
+        "start_date": "2023-01",
+        "end_date": "2023-04",
+        "end_year_month": 202304,
+        "is_current": false,
+        "is_most_recent": false,
+        "responsibilities": [
+        "Built a Power BI sales analysis dashboard on 50K+ records",
+        "Automated data scraping from 10+ websites using Selenium and BeautifulSoup",
+        "Developed GUI-based tools using Tkinter",
+        "Created Flask web applications improving backend efficiency by 20%"
+        ]
+    },
+    {
+        "company": "Dassys Solutions",
+        "location": "Surat, India",
+        "role": "Shopify Development Intern",
+        "employment_type": "Internship",
+        "start_date": "2022-06",
+        "end_date": "2022-07",
+        "end_year_month": 202207,
+        "is_current": false,
+        "is_most_recent": false,
+        "responsibilities": [
+        "Built and launched two custom Shopify e-commerce websites",
+        "Designed responsive themes and integrated secure payment gateways",
+        "Configured third-party apps for email automation and cart recovery",
+        "Trained clients and tracked performance using Shopify Analytics"
+        ]
+    }
+    ],
+
+  "projects": [
+    {
+      "name": "LinkedIn Post Generator",
+      "date": "2025-05",
+      "description": "AI assistant that replicates LinkedIn writing styles using few-shot prompting.",
+      "technologies": ["LLaMA 3.3", "Groq", "LangChain", "Streamlit"],
+      "impact": [
+        "Reduced content creation time by 40%",
+        "Increased engagement by 3x"
+      ]
+    },
+    {
+      "name": "Cold Mail Generator",
+      "date": "2024-08",
+      "description": "Automated personalized cold email generation using job descriptions and portfolio matching.",
+      "technologies": ["LangChain", "Groq", "Vector Databases", "Streamlit"],
+      "impact": [
+        "Reduced outreach time by 60%",
+        "Improved reply rate by 25%"
+      ]
+    },
+    {
+      "name": "News Research Tool (RockyBot)",
+      "date": "2024-08",
+      "description": "Tool to extract insights from financial news articles using vector search and LLM-based Q&A.",
+      "technologies": ["LangChain", "FAISS", "OpenAI", "Streamlit"]
+    },
+    {
+      "name": "Automatic Feedback System for Non-Functional Street Lights",
+      "date": "2022",
+      "description": "IoT-based system to detect and report faulty street lights with GPS tracking.",
+      "technologies": ["Arduino", "ESP32", "LoRa", "Flutter", "Node.js", "Python"],
+      "recognition": "National Finalist – Smart India Hackathon 2022"
+    },
+    {
+      "name": "Smart First-Aid Application",
+      "date": "2022",
+      "description": "Multilingual Android app providing BMI-based health feedback and disease insights.",
+      "technologies": ["Android", "Flutter", "Firebase", "Python"],
+      "recognition": "Winner – SSIP Hackathon 2022"
+    }
+  ],
+
+  "hackathons_and_awards": [
+    {
+      "event": "AI Leipzig Hackathon",
+      "location": "Leipzig, Germany",
+      "result": "Winner"
+    },
+    {
+      "event": "SSIP Hackathon 2022",
+      "location": "Gujarat, India",
+      "result": "Winner (1st place among 150+ teams)"
+    },
+    {
+      "event": "Smart India Hackathon 2022",
+      "location": "India",
+      "result": "National Finalist"
+    }
+  ],
+
+  "certifications": [
+    "Deep Learning with PyTorch: GANs (Coursera, 2023)",
+    "Natural Language Processing in Microsoft Azure (2023)",
+    "Build a Data Science Web App with Streamlit and Python (2022)",
+    "Data Science with Python (2022)",
+    "Python Data Structures (2021)"
+  ],
+
+  "skills": {
+    "programming_languages": ["Python", "Java", "C", "PHP"],
+    "ai_and_ml": [
+      "Computer Vision",
+      "NLP",
+      "Generative AI",
+      "LLMs",
+      "Prompt Engineering",
+      "YOLOv8",
+      "Yolo-NAS"
+    ],
+    "frameworks_and_libraries": [
+      "PyTorch",
+      "TensorFlow",
+      "HuggingFace",
+      "LangChain",
+      "Scikit-learn",
+      "spaCy",
+      "NLTK"
+    ],
+    "tools_and_platforms": [
+      "FAISS",
+      "Pinecone",
+      "MLflow",
+      "Docker",
+      "Kubernetes",
+      "ONNX Runtime",
+      "TensorRT",
+      "Git",
+      "Power BI",
+      "Streamlit"
+    ],
+    "cloud": ["AWS", "Azure", "GCP"]
+  },
+
+  "languages": [
+    { "language": "English", "level": "C1" },
+    { "language": "German", "level": "B1 (Learning)" },
+    { "language": "Hindi", "level": "C2" },
+    { "language": "Gujarati", "level": "C2 (Native)" }
+  ],
+
+  "networks_and_programs": [
+    {
+      "name": "Young Founders Network (YFN)",
+      "location": "Germany",
+      "start_date": "2025-07",
+      "description": "Community focused on innovation, entrepreneurship, and networking."
+    },
+    {
+      "name": "YETI Entrepreneurship Program",
+      "location": "Leipzig, Germany",
+      "start_date": "2025-09",
+      "description": "International entrepreneurship and venture-building program."
+    }
+  ],
+
+  "interests": [
+    "Artificial Intelligence",
+    "Tech Blogging",
+    "Healthcare Innovation",
+    "Hiking",
+    "Team Sports"
+  ]
+}
