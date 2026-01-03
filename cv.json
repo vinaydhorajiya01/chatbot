@@ -53,16 +53,7 @@
       "country": "Germany",
       "start_date": "2023-10",
       "end_date": "Present",
-      "eqf_level": "EQF Level 7",
-      "coursework": [
-        "Image Understanding (Computer Vision)",
-        "Advanced Platforms for Automotive Systems",
-        "Software Service Engineering",
-        "Software Engineering and Java Programming",
-        "Hardware / Software Co-design",
-        "Machine Learning",
-        "Distributed and Embedded Systems"
-      ]
+      "eqf_level": "EQF Level 7"
     },
     {
       "degree": "Bachelor of Engineering",
@@ -73,18 +64,7 @@
       "start_date": "2019-06",
       "end_date": "2023-06",
       "eqf_level": "EQF Level 6",
-      "gpa": "1.5 (Top 5% of batch)",
-      "coursework": [
-        "Machine Learning",
-        "Artificial Intelligence",
-        "Natural Language Processing",
-        "Advanced Java",
-        "Python for Data Science",
-        "Database Management (MySQL)",
-        "Embedded Systems",
-        "Web Development",
-        "Data Structures and Algorithms"
-      ]
+      "gpa": "1.5 (Top 5% of batch)"
     }
   ],
 
@@ -92,7 +72,7 @@
   {
     "company": "Casablanca.AI GmbH",
     "location": "Pforzheim, Germany",
-    "role": "Software Development Intern – Computer Vision",
+    "role": "Software Development Intern Computer Vision",
     "employment_type": "Internship (Onsite)",
     "start_date": "2025-02",
     "end_date": "2025-04",
@@ -140,23 +120,6 @@
         "Automated data scraping from 10+ websites using Selenium and BeautifulSoup",
         "Developed GUI-based tools using Tkinter",
         "Created Flask web applications improving backend efficiency by 20%"
-        ]
-    },
-    {
-        "company": "Dassys Solutions",
-        "location": "Surat, India",
-        "role": "Shopify Development Intern",
-        "employment_type": "Internship",
-        "start_date": "2022-06",
-        "end_date": "2022-07",
-        "end_year_month": 202207,
-        "is_current": false,
-        "is_most_recent": false,
-        "responsibilities": [
-        "Built and launched two custom Shopify e-commerce websites",
-        "Designed responsive themes and integrated secure payment gateways",
-        "Configured third-party apps for email automation and cart recovery",
-        "Trained clients and tracked performance using Shopify Analytics"
         ]
     }
     ],
@@ -222,14 +185,6 @@
     }
   ],
 
-  "certifications": [
-    "Deep Learning with PyTorch: GANs (Coursera, 2023)",
-    "Natural Language Processing in Microsoft Azure (2023)",
-    "Build a Data Science Web App with Streamlit and Python (2022)",
-    "Data Science with Python (2022)",
-    "Python Data Structures (2021)"
-  ],
-
   "skills": {
     "programming_languages": ["Python", "Java", "C", "PHP"],
     "ai_and_ml": [
@@ -272,7 +227,7 @@
     { "language": "Gujarati", "level": "C2 (Native)" }
   ],
 
-  "networks_and_programs": [
+  "Entrepreneurship": [
     {
       "name": "Young Founders Network (YFN)",
       "location": "Germany",

@@ -115,8 +115,24 @@ Question:
     )
 
     def get_retriever(query: str):
-        """Smart retriever: return more context for broad questions."""
+        """Smart retriever: return more context for broad questions and prioritize recent experience."""
         k = 8 if any(keyword in query.lower() for keyword in BROAD_KEYWORDS) else 3
+        
+        # Check if query is asking about recent/latest experience
+        recent_keywords = ["recent", "latest", "current", "now", "most recent"]
+        is_recent_query = any(keyword in query.lower() for keyword in recent_keywords)
+        
+        if is_recent_query:
+            # Get all docs and sort by most recent
+            docs = vectorstore.similarity_search(query, k=k*2)
+            # Prioritize most_recent marked documents and work_experience type
+            docs.sort(key=lambda d: (
+                d.metadata.get("is_most_recent", False),
+                d.metadata.get("type") == "work_experience"
+            ), reverse=True)
+            # Create a custom retriever that returns the sorted docs
+            return lambda x: docs[:k]
+        
         return vectorstore.as_retriever(search_kwargs={"k": k})
 
     return {
@@ -162,9 +178,14 @@ def initialize_session_state() -> None:
 
 def render_chat_history() -> None:
     """Display chat history."""
+    profile_img = Image.open("profile.png")
     for msg in st.session_state.messages:
-        with st.chat_message(msg["role"]):
-            st.write(msg["content"])
+        if msg["role"] == "assistant":
+            with st.chat_message(msg["role"], avatar=profile_img):
+                st.write(msg["content"])
+        else:
+            with st.chat_message(msg["role"]):
+                st.write(msg["content"])
 
 
 def add_message(role: str, content: str) -> None:
@@ -203,7 +224,8 @@ def main():
         reply = handle_chat_step(user_input, rag_components)
         
         # Display assistant response
-        with st.chat_message("assistant"):
+        profile_img = Image.open("profile.png")
+        with st.chat_message("assistant", avatar=profile_img):
             st.write(reply)
         
         add_message("assistant", reply)
