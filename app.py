@@ -130,8 +130,10 @@ Question:
                 d.metadata.get("is_most_recent", False),
                 d.metadata.get("type") == "work_experience"
             ), reverse=True)
-            # Create a custom retriever that returns the sorted docs
-            return lambda x: docs[:k]
+            # Format docs as strings for the prompt
+            context_str = "\n\n".join([doc.page_content for doc in docs[:k]])
+            # Return a callable that returns the formatted context
+            return lambda x: context_str
         
         return vectorstore.as_retriever(search_kwargs={"k": k})
 
@@ -157,6 +159,12 @@ def invoke_rag_chain(rag_components: Dict, user_input: str) -> str:
     )
     
     return rag_chain.invoke(user_input)
+
+
+def stream_response(response: str):
+    """Generator to yield response character by character for streaming effect."""
+    for char in response:
+        yield char
 
 
 # ==================== CONVERSATION HANDLERS ====================
@@ -223,10 +231,10 @@ def main():
         # Get RAG response
         reply = handle_chat_step(user_input, rag_components)
         
-        # Display assistant response
+        # Display assistant response with typing effect
         profile_img = Image.open("profile.png")
         with st.chat_message("assistant", avatar=profile_img):
-            st.write(reply)
+            st.write_stream(stream_response(reply))
         
         add_message("assistant", reply)
 
