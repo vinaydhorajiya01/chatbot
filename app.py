@@ -3,10 +3,8 @@ import re
 import time
 import hashlib
 from typing import Dict, Callable
-from datetime import datetime
 
 import streamlit as st
-import pandas as pd
 from dotenv import load_dotenv
 from PIL import Image
 
@@ -23,7 +21,6 @@ from json_loader import load_cv_json
 # ==================== CONFIG ====================
 load_dotenv()
 
-EXCEL_FILE = "visitors.xlsx"
 EMBEDDINGS_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 LLM_MODEL = "llama-3.1-8b-instant"
 
@@ -33,43 +30,8 @@ BROAD_KEYWORDS = [
     "hackathon", "achievements", "career", "profile"
 ]
 
-# ==================== VALIDATORS ====================
-def is_valid_name(name: str) -> bool:
-    """Validate name: 2-50 characters, letters and spaces only."""
-    return bool(re.fullmatch(r"[A-Za-z][A-Za-z ]{1,50}", name.strip()))
-
-
-def is_valid_email(email: str) -> bool:
-    """Validate email format."""
-    return bool(re.fullmatch(r"[^@\s]+@[^@\s]+\.[^@\s]+", email.strip()))
-
-
-def is_valid_company(company: str) -> bool:
-    """Validate company: min 2 chars with at least one letter."""
-    stripped = company.strip()
-    return len(stripped) >= 2 and any(c.isalpha() for c in stripped)
-
-
-# ==================== VISITOR MANAGEMENT ====================
-def save_visitor(visitor: Dict[str, str]) -> None:
-    """Save visitor info to Excel file."""
-    row = {
-        "name": visitor["name"],
-        "email": visitor["email"],
-        "company": visitor["company"],
-        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    }
-
-    if os.path.exists(EXCEL_FILE):
-        df = pd.read_excel(EXCEL_FILE)
-        df = pd.concat([df, pd.DataFrame([row])], ignore_index=True)
-    else:
-        df = pd.DataFrame([row])
-
-    df.to_excel(EXCEL_FILE, index=False)
-
-
 # ==================== RAG SETUP ====================
+
 def get_file_hash(path: str) -> str:
     """Calculate MD5 hash of a file."""
     with open(path, "rb") as f:
@@ -182,37 +144,6 @@ def invoke_rag_chain(rag_components: Dict, user_input: str) -> str:
 
 
 # ==================== CONVERSATION HANDLERS ====================
-def handle_name_step(user_input: str) -> str:
-    """Handle name collection step."""
-    if not is_valid_name(user_input):
-        return "Could you please share your full name? 😊"
-    
-    st.session_state.visitor["name"] = user_input.strip()
-    st.session_state.step = "ask_email"
-    return f"Nice to meet you, {st.session_state.visitor['name']} 😊 What's your email address?"
-
-
-def handle_email_step(user_input: str) -> str:
-    """Handle email collection step."""
-    if not is_valid_email(user_input):
-        return "That doesn't look like a valid email address. Could you please check and try again?"
-    
-    st.session_state.visitor["email"] = user_input.strip()
-    st.session_state.step = "ask_company"
-    return "Thanks! Which company are you representing?"
-
-
-def handle_company_step(user_input: str) -> str:
-    """Handle company collection step."""
-    if not is_valid_company(user_input):
-        return "Could you please share your company name?"
-    
-    st.session_state.visitor["company"] = user_input.strip()
-    save_visitor(st.session_state.visitor)
-    st.session_state.step = "chat"
-    return "Perfect, thanks! 😊 How can I help you today?"
-
-
 def handle_chat_step(user_input: str, rag_components: Dict) -> str:
     """Handle normal RAG chat step."""
     with st.spinner("Vinay is typing..."):
@@ -223,15 +154,9 @@ def handle_chat_step(user_input: str, rag_components: Dict) -> str:
 # ==================== STREAMLIT UI ====================
 def initialize_session_state() -> None:
     """Initialize all required session state variables."""
-    if "visitor" not in st.session_state:
-        st.session_state.visitor = {"name": None, "email": None, "company": None}
-    
-    if "step" not in st.session_state:
-        st.session_state.step = "ask_name"
-    
     if "messages" not in st.session_state:
         st.session_state.messages = [
-            {"role": "assistant", "content": "Hi 👋 Before we begin, may I know your name?"}
+            {"role": "assistant", "content": "Hi 👋 How can I help you today?"}
         ]
 
 
@@ -274,15 +199,8 @@ def main():
         with st.chat_message("user"):
             st.write(user_input)
         
-        # Process based on current step
-        step_handlers = {
-            "ask_name": handle_name_step,
-            "ask_email": handle_email_step,
-            "ask_company": handle_company_step,
-            "chat": lambda input_: handle_chat_step(input_, rag_components)
-        }
-        
-        reply = step_handlers[st.session_state.step](user_input)
+        # Get RAG response
+        reply = handle_chat_step(user_input, rag_components)
         
         # Display assistant response
         with st.chat_message("assistant"):
